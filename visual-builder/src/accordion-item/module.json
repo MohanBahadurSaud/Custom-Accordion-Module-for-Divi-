@@ -1,0 +1,461 @@
+{
+  "name": "d5-tut/accordion-item",
+  "d4Shortcode": "d5_tut_accordion_item",
+  "title": "Accordion Item",
+  "titles": "Accordion Items",
+  "category": "child-module",
+  "moduleClassName": "d5_tut_accordion_item",
+  "moduleOrderClassName": "d5_tut_accordion_item",
+  "childrenName": [],
+  "attributes": {
+    "module": {
+      "type": "object",
+      "selector": "{{selector}}",
+      "default": {
+        "meta": {
+          "adminLabel": {
+            "desktop": { "value": "Accordion Item" }
+          }
+        }
+      },
+      "settings": {
+        "meta": {
+          "adminLabel": {}
+        },
+        "advanced": {
+          "elements": {},
+          "html": {},
+          "link": {},
+          "loop": {}
+        },
+        "decoration": {
+          "layout": {},
+          "attributes": {},
+          "background": {},
+          "sizing": {},
+          "spacing": {},
+          "border": {},
+          "boxShadow": {},
+          "filters": {},
+          "transform": {},
+          "animation": {},
+          "overflow": {},
+          "disabledOn": {},
+          "transition": {},
+          "position": {},
+          "zIndex": {},
+          "scroll": {},
+          "sticky": {}
+        }
+      },
+      "styleProps": {
+        "spacing": {
+          "important": true
+        }
+      }
+    },
+    "title": {
+      "type": "object",
+      "selector": "{{selector}} .d5_tut_accordion_item_title",
+      "attributes": {
+        "class": "d5_tut_accordion_item_title"
+      },
+      "tagName": "h5",
+      "inlineEditor": "plainText",
+      "elementType": "heading",
+      "childrenSanitizer": "et_core_esc_previously",
+      "settings": {
+        "innerContent": {
+          "groupType": "group-item",
+          "item": {
+            "groupName": "mainContent",
+            "priority": 10,
+            "render": true,
+            "attrName": "title.innerContent",
+            "label": "Title",
+            "description": "Title",
+            "features": {
+              "dynamicContent": false
+            },
+            "component": {
+              "name": "divi/text",
+              "type": "field"
+            }
+          }
+        },
+        "decoration": {
+          "font": {
+            "priority": 10,
+            "component": {
+              "props": {
+                "groupLabel": "Title Font",
+                "fieldLabel": "",
+                "fields": {
+                  "headingLevel": {
+                    "render": false
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "subHeading": {
+      "type": "object",
+      "selector": "{{selector}} .d5_tut_accordion_item_sub_heading",
+      "attributes": {
+        "class": "d5_tut_accordion_item_sub_heading"
+      },
+      "tagName": "h4",
+      "inlineEditor": "plainText",
+      "elementType": "heading",
+      "childrenSanitizer": "et_core_esc_previously",
+      "settings": {
+        "innerContent": {
+          "groupType": "group-item",
+          "item": {
+            "groupName": "mainContent",
+            "priority": 16,
+            "render": true,
+            "attrName": "subHeading.innerContent",
+            "label": "Sub Heading",
+            "description": "Larger heading shown inside the open accordion item.",
+            "features": {
+              "dynamicContent": false
+            },
+            "component": {
+              "name": "divi/text",
+              "type": "field"
+            }
+          }
+        },
+        "decoration": {
+          "font": {
+            "priority": 10,
+            "component": {
+              "props": {
+                "groupLabel": "Sub Heading Font",
+                "fieldLabel": "",
+                "fields": {
+                  "headingLevel": {
+                    "render": false
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "linkText": {
+      "type": "object",
+      "selector": "{{selector}} .d5_tut_accordion_item_link_text",
+      "attributes": {
+        "class": "d5_tut_accordion_item_link_text"
+      },
+      "tagName": "span",
+      "inlineEditor": "plainText",
+      "childrenSanitizer": "et_core_esc_previously",
+      "settings": {
+        "innerContent": {
+          "groupType": "group-item",
+          "item": {
+            "groupName": "mainContent",
+            "priority": 17,
+            "render": true,
+            "attrName": "linkText.innerContent",
+            "label": "Link Text",
+            "description": "Label for the 'Learn More' style link.",
+            "features": {
+              "dynamicContent": false
+            },
+            "component": {
+              "name": "divi/text",
+              "type": "field"
+            }
+          }
+        },
+        "decoration": {
+          "font": {
+            "priority": 17,
+            "component": {
+              "props": {
+                "groupLabel": "Link Text",
+                "fieldLabel": "",
+                "fields": {
+                  "headingLevel": {
+                    "render": false
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "linkUrl": {
+      "type": "object",
+      "settings": {
+        "innerContent": {
+          "groupType": "group-item",
+          "item": {
+            "groupName": "mainContent",
+            "priority": 18,
+            "render": true,
+            "attrName": "linkUrl.innerContent",
+            "label": "Link URL",
+            "description": "Destination URL for the link.",
+            "features": {
+              "dynamicContent": false
+            },
+            "component": {
+              "name": "divi/text",
+              "type": "field"
+            }
+          }
+        }
+      }
+    },
+    "noteText": {
+      "type": "object",
+      "selector": "{{selector}} .d5_tut_accordion_item_note_text",
+      "attributes": {
+        "class": "d5_tut_accordion_item_note_text"
+      },
+      "tagName": "p",
+      "inlineEditor": "plainText",
+      "childrenSanitizer": "et_core_esc_previously",
+      "settings": {
+        "innerContent": {
+          "groupType": "group-item",
+          "item": {
+            "groupName": "mainContent",
+            "priority": 19,
+            "render": true,
+            "attrName": "noteText.innerContent",
+            "label": "Note Text",
+            "description": "Small note shown below the content, above the link.",
+            "features": {
+              "dynamicContent": false
+            },
+            "component": {
+              "name": "divi/text",
+              "type": "field"
+            }
+          }
+        },
+        "decoration": {
+          "font": {
+            "priority": 19,
+            "component": {
+              "props": {
+                "groupLabel": "Note Text",
+                "fieldLabel": "",
+                "fields": {
+                  "headingLevel": {
+                    "render": false
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "leftIcon": {
+      "type": "object",
+      "selector": "{{selector}} .d5_tut_accordion_item_left_icon",
+      "tagName": "span",
+      "attributes": {
+        "class": "d5_tut_accordion_item_left_icon et-pb-icon"
+      },
+      "default": {
+        "innerContent": {
+          "desktop": {
+            "value": {
+              "unicode": "&#xe612;",
+              "type": "divi",
+              "weight": "400"
+            }
+          }
+        }
+      },
+      "settings": {
+        "innerContent": {
+          "groupType": "group-item",
+          "item": {
+            "groupName": "mainContent",
+            "priority": 15,
+            "render": true,
+            "attrName": "leftIcon.innerContent",
+            "label": "Left Icon",
+            "description": "Choose an icon to display on the left side of the accordion item title.",
+            "features": {
+              "sticky": false,
+              "dynamicContent": false
+            },
+            "component": {
+              "name": "divi/icon-picker",
+              "type": "field"
+            }
+          }
+        },
+
+        "decoration": {
+          "font": {
+            "priority": 10,
+            "component": {
+              "props": {
+                "groupLabel": "Left Icon",
+                "fieldLabel": "Icon",
+                "fields": {
+                  "font": {
+                    "render": false
+                  },
+                  "fontFamily": {
+                    "render": false
+                  },
+                  "fontWeight": {
+                    "render": false
+                  },
+                  "fontStyle": {
+                    "render": false
+                  },
+                  "textAlign": {
+                    "render": false
+                  },
+                  "letterSpacing": {
+                    "render": false
+                  },
+                  "lineHeight": {
+                    "render": false
+                  },
+                  "textShadow": {
+                    "render": false
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+
+      "styleProps": {
+        "font": {
+          "important": true
+        }
+      }
+    },
+    "itemImage": {
+      "type": "object",
+      "settings": {
+        "innerContent": {
+          "groupType": "group-item",
+          "item": {
+            "groupName": "mainContent",
+            "priority": 20,
+            "render": true,
+            "attrName": "itemImage.innerContent",
+            "label": "Item Image",
+            "description": "Image shown in the right-side panel when this item is open.",
+            "features": {
+              "dynamicContent": false
+            },
+            "component": {
+              "name": "d5-tut/image-picker",
+              "type": "field"
+            }
+          }
+        }
+      }
+    },
+    "content": {
+      "type": "object",
+      "selector": "{{selector}} .d5_tut_accordion_item_content",
+      "attributes": {
+        "class": "d5_tut_accordion_item_content"
+      },
+      "tagName": "div",
+      "inlineEditor": "richText",
+      "childrenSanitizer": "et_core_esc_previously",
+      "allowHtml": true,
+      "settings": {
+        "innerContent": {
+          "groupType": "group-item",
+          "item": {
+            "groupName": "mainContent",
+            "priority": 20,
+            "render": true,
+            "attrName": "content.innerContent",
+            "label": "Content",
+            "description": "Content",
+            "features": {
+              "dynamicContent": false
+            },
+            "component": {
+              "name": "divi/richtext",
+              "type": "field"
+            }
+          }
+        },
+        "decoration": {
+          "bodyFont": {}
+        }
+      }
+    },
+    "icon": {
+      "type": "object",
+      "selector": "{{selector}} .d5_tut_accordion_item_title::after",
+      "settings": {
+        "decoration": {
+          "font": {
+            "priority": 10,
+            "component": {
+              "props": {
+                "groupLabel": "Icon",
+                "fieldLabel": "Icon",
+                "fields": {
+                  "font": {
+                    "render": false
+                  },
+                  "fontFamily": {
+                    "render": false
+                  },
+                  "fontWeight": {
+                    "render": false
+                  },
+                  "fontStyle": {
+                    "render": false
+                  },
+                  "textAlign": {
+                    "render": false
+                  },
+                  "letterSpacing": {
+                    "render": false
+                  },
+                  "lineHeight": {
+                    "render": false
+                  },
+                  "textShadow": {
+                    "render": false
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "styleProps": {
+        "font": {
+          "important": true
+        }
+      }
+    }
+  },
+  "settings": {
+    "content": "auto",
+    "design": "auto",
+    "advanced": "auto"
+  }
+}

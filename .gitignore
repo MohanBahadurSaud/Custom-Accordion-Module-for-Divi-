@@ -1,0 +1,9 @@
+# Node dependencies
+visual-builder/node_modules/
+
+# VS Code local settings
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
