@@ -24,6 +24,6 @@ accordionModuleV5/
 ├── visual-builder/
 ├── .gitignore
 └── d5-tutorial-simple-accordion.php
-``
+```
 ## Compatibility 
 This module is currently built for **Divi 5** and is not compatible with Divi 4.
