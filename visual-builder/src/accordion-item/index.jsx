@@ -127,13 +127,28 @@ const renderLeftIcon = (attrs) => {
 };
 
 // image picker component
+
 const ImagePickerField = (props) => {
-  // console.log("Image picker props:", props);
   const { value, onChange } = props;
 
+  // Remove the selected image and restore the default image in the parent.
+  const removeImage = () => {
+    onChange({});
+
+    window.dispatchEvent(
+      new CustomEvent("d5-tut-accordion-image-change", {
+        detail: {
+          url: "",
+          alt: "",
+        },
+      }),
+    );
+  };
+
+  // Open the WordPress Media Library.
   const openMediaLibrary = () => {
     if (!window.wp?.media) {
-      // console.error("WordPress Media Library is not available.");
+      console.error("WordPress Media Library is not available.");
       return;
     }
 
@@ -149,9 +164,11 @@ const ImagePickerField = (props) => {
     });
 
     mediaFrame.on("select", () => {
-      const attachment = mediaFrame.state().get("selection").first().toJSON();
-
-      // console.log("Selected image:", attachment);
+      const attachment = mediaFrame
+        .state()
+        .get("selection")
+        .first()
+        .toJSON();
 
       const imageValue = {
         id: attachment.id,
@@ -159,10 +176,10 @@ const ImagePickerField = (props) => {
         alt: attachment.alt || "",
       };
 
-      // Save the value into the Divi attribute.
+      // Save the selected image in the Divi field.
       onChange(imageValue);
 
-      // Immediately notify the Accordion parent that the image changed.
+      // Notify the parent accordion that the image changed.
       window.dispatchEvent(
         new CustomEvent("d5-tut-accordion-image-change", {
           detail: {
@@ -171,19 +188,6 @@ const ImagePickerField = (props) => {
           },
         }),
       );
-
-      const removeImage = () => {
-        onChange({});
-
-        window.dispatchEvent(
-          new CustomEvent("d5-tut-accordion-image-change", {
-            detail: {
-              url: "",
-              alt: "",
-            },
-          }),
-        );
-      };
     });
 
     mediaFrame.open();
@@ -193,12 +197,6 @@ const ImagePickerField = (props) => {
     <div>
       <button type="button" onClick={openMediaLibrary}>
         {value?.url ? "Change Image" : "Select Image"}
-
-        {value?.url && (
-          <button type="button" onClick={removeImage}>
-            Remove Image
-          </button>
-        )}
       </button>
 
       {value?.url && (
@@ -210,8 +208,13 @@ const ImagePickerField = (props) => {
               maxWidth: "100%",
               height: "auto",
               display: "block",
+              marginBottom: "10px",
             }}
           />
+
+          <button type="button" onClick={removeImage}>
+            Remove Image
+          </button>
         </div>
       )}
     </div>
