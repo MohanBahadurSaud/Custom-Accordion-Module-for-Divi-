@@ -198,7 +198,7 @@ if (typeof document !== "undefined") {
   // Immediately update the image panel when the custom
   // image picker selects an image.
   window.addEventListener("d5-tut-accordion-image-change", (event) => {
-    const imageUrl = event.detail?.url || "";
+    const imageUrl = event.detail?.url || getDefaultAccordionImageUrl();
 
     document.querySelectorAll(".d5_tut_accordion").forEach((accordionEl) => {
       const openItem = accordionEl.querySelector(".d5_tut_accordion_item_open");

@@ -171,6 +171,19 @@ const ImagePickerField = (props) => {
           },
         }),
       );
+
+      const removeImage = () => {
+        onChange({});
+
+        window.dispatchEvent(
+          new CustomEvent("d5-tut-accordion-image-change", {
+            detail: {
+              url: "",
+              alt: "",
+            },
+          }),
+        );
+      };
     });
 
     mediaFrame.open();
@@ -180,6 +193,12 @@ const ImagePickerField = (props) => {
     <div>
       <button type="button" onClick={openMediaLibrary}>
         {value?.url ? "Change Image" : "Select Image"}
+
+        {value?.url && (
+          <button type="button" onClick={removeImage}>
+            Remove Image
+          </button>
+        )}
       </button>
 
       {value?.url && (
