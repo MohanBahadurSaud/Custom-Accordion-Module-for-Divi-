@@ -49,7 +49,9 @@
           "position": {},
           "zIndex": {},
           "scroll": {},
-          "sticky": {}
+          "sticky": {},
+          "conditions": {},
+          "interactions": {}
         }
       },
       "styleProps": {
