@@ -77,6 +77,11 @@ const ModuleStyles = ({ elements, settings, mode, state, noStyleTag }) => (
       attrName: "linkText",
     })}
 
+    {/* Link Icon styles */}
+    {elements.style({
+      attrName: "linkIcon",
+    })}
+
     {/* Icon styles */}
     {elements.style({
       attrName: "icon",
@@ -126,6 +131,29 @@ const renderLeftIcon = (attrs) => {
   );
 };
 
+const renderLinkIcon = (attrs) => {
+  const iconValue = attrs?.linkIcon?.innerContent?.desktop?.value;
+  if (!iconValue?.unicode) {
+    return null;
+  }
+
+  const txt = document.createElement("textarea");
+  txt.innerHTML = iconValue.unicode;
+  const glyph = txt.value;
+
+  return (
+    <span
+      className="et-pb-icon d5_tut_accordion_item_link_icon"
+      style={{
+        fontFamily: "ETmodules",
+        fontWeight: iconValue.weight || "400",
+      }}
+    >
+      {glyph}
+    </span>
+  );
+};
+
 // image picker component
 
 const ImagePickerField = (props) => {
@@ -164,11 +192,7 @@ const ImagePickerField = (props) => {
     });
 
     mediaFrame.on("select", () => {
-      const attachment = mediaFrame
-        .state()
-        .get("selection")
-        .first()
-        .toJSON();
+      const attachment = mediaFrame.state().get("selection").first().toJSON();
 
       const imageValue = {
         id: attachment.id,
@@ -335,6 +359,7 @@ const AccordionItemEdit = ({ attrs, id, name, elements }) => {
               {elements.render({
                 attrName: "linkText",
               })}
+              {renderLinkIcon(attrs)}
             </a>
           )}
         </div>
@@ -380,7 +405,7 @@ const accordionItemPlaceholderContent = {
   linkText: {
     innerContent: {
       desktop: {
-        value: "Learn More->",
+        value: "Learn More",
       },
     },
   },

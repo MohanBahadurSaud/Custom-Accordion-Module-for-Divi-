@@ -64,6 +64,7 @@ class D5TutorialAccordionItem implements DependencyInterface
                     $args['elements']->style(['attrName' => 'title']),
                     $args['elements']->style(['attrName' => 'subHeading']),
                     $args['elements']->style(['attrName' => 'linkText']),
+                    $args['elements']->style(['attrName' => 'linkIcon']),
                     $args['elements']->style(['attrName' => 'content']),
                     $args['elements']->style(['attrName' => 'noteText']),
                     // Left Icon styles.
@@ -125,6 +126,32 @@ class D5TutorialAccordionItem implements DependencyInterface
             ]
         );
     }
+
+    public static function render_link_icon($attrs)
+{
+    $icon_value = $attrs['linkIcon']['innerContent']['desktop']['value'] ?? null;
+
+    if (empty($icon_value['unicode'])) {
+        return '';
+    }
+
+    $glyph  = html_entity_decode($icon_value['unicode'], ENT_QUOTES | ENT_HTML5, 'UTF-8');
+    $weight = $icon_value['weight'] ?? '400';
+
+    return HTMLUtility::render(
+        [
+            'tag' => 'span',
+            'attributes' => [
+                'class' => 'et-pb-icon d5_tut_accordion_item_link_icon',
+                'style' => sprintf(
+                    'font-family: ETmodules; font-weight: %s;',
+                    esc_attr($weight)
+                ),
+            ],
+            'children' => $glyph,
+        ]
+    );
+}
 
     public static function render_link($attrs)
     {
@@ -213,6 +240,19 @@ class D5TutorialAccordionItem implements DependencyInterface
                 ]
             );
            
+
+            $link_icon = self::render_link_icon($attrs);
+            return HTMLUtility::render(
+                [
+                    'tag' => 'a',
+                    'attributes' => [
+                    'class' => 'd5_tut_accordion_item_link',
+                    'href' => $link_url_value !== '' ? esc_url($link_url_value) : '#',
+                ],
+                'childrenSanitizer' => 'et_core_esc_previously',
+                'children' => $link_text_span . $link_icon,
+                ]
+            );
 
             $module_inner = HTMLUtility::render(
                 [

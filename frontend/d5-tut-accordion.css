@@ -188,6 +188,26 @@ Accordion Image Panel
   transition: opacity 0.35s ease;
 }
 
+/* =========================================
+Accordion link + link icon
+========================================= */
+
+.d5_tut_accordion_item_link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+}
+
+.d5_tut_accordion_item_link_icon {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+  color: #0066cc;
+  font-size: 14px;
+}
+
 @media (max-width: 980px) {
   .d5_tut_accordion_image_panel {
     height: 300px;

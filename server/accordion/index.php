@@ -87,6 +87,12 @@ class D5TutorialAccordion implements DependencyInterface
                             'attrName' => 'linkText',
                         ]
                     ),
+                    // global link icon
+                    $args['elements']->style(
+                        [
+                            'attrName' => 'linkIcon',
+                        ]
+                    ),
                     // Global body/content styles.
                     $args['elements']->style(
                         [

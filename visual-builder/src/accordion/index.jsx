@@ -80,6 +80,10 @@ const ModuleStyles = ({ elements, settings, mode, state, noStyleTag }) => (
     {elements.style({
       attrName: "linkText",
     })}
+
+    {elements.style({
+      attrName: "linkIcon",
+    })}
     {elements.style({
       attrName: "content",
     })}

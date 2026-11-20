@@ -196,6 +196,72 @@
         }
       }
     },
+    "linkIcon": {
+      "type": "object",
+      "selector": "{{selector}} .d5_tut_accordion_item_link_icon",
+      "tagName": "span",
+      "attributes": {
+        "class": "d5_tut_accordion_item_link_icon et-pb-icon"
+      },
+      "default": {
+        "innerContent": {
+          "desktop": {
+            "value": {
+              "unicode": "&#x35;",
+              "type": "divi",
+              "weight": "400"
+            }
+          }
+        }
+      },
+      "settings": {
+        "innerContent": {
+          "groupType": "group-item",
+          "item": {
+            "groupName": "mainContent",
+            "priority": 19,
+            "render": true,
+            "attrName": "linkIcon.innerContent",
+            "label": "Link Icon",
+            "description": "Choose an icon to display next to the link text.",
+            "features": {
+              "sticky": false,
+              "dynamicContent": false
+            },
+            "component": {
+              "name": "divi/icon-picker",
+              "type": "field"
+            }
+          }
+        },
+        "decoration": {
+          "font": {
+            "priority": 18,
+            "component": {
+              "props": {
+                "groupLabel": "Link Icon",
+                "fieldLabel": "Icon",
+                "fields": {
+                  "font": { "render": false },
+                  "fontFamily": { "render": false },
+                  "fontWeight": { "render": false },
+                  "fontStyle": { "render": false },
+                  "textAlign": { "render": false },
+                  "letterSpacing": { "render": false },
+                  "lineHeight": { "render": false },
+                  "textShadow": { "render": false }
+                }
+              }
+            }
+          }
+        }
+      },
+      "styleProps": {
+        "font": {
+          "important": true
+        }
+      }
+    },
     "linkUrl": {
       "type": "object",
       "settings": {

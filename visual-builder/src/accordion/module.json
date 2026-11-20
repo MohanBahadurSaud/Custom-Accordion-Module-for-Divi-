@@ -228,6 +228,52 @@
         }
       }
     },
+    "linkIcon": {
+  "type": "object",
+  "selector": "{{selector}} .d5_tut_accordion_item_link_icon",
+  "default": {
+    "decoration": {
+      "font": {
+        "font": {
+          "desktop": {
+            "value": {
+              "color": "#0066cc",
+              "size": "14px"
+            }
+          }
+        }
+      }
+    }
+  },
+  "settings": {
+    "decoration": {
+      "font": {
+        "priority": 12,
+        "component": {
+          "props": {
+            "groupLabel": "Link Icon",
+            "fieldLabel": "Icon",
+            "fields": {
+              "font": { "render": false },
+              "fontFamily": { "render": false },
+              "fontWeight": { "render": false },
+              "fontStyle": { "render": false },
+              "textAlign": { "render": false },
+              "letterSpacing": { "render": false },
+              "lineHeight": { "render": false },
+              "textShadow": { "render": false }
+            }
+          }
+        }
+      }
+    }
+  },
+  "styleProps": {
+    "font": {
+      "important": true
+    }
+  }
+},
     "noteText": {
       "type": "object",
       "selector": "{{selector}} .d5_tut_accordion_item_note_text",
